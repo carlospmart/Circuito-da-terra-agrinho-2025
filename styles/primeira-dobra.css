@@ -18,7 +18,8 @@
 }
 
 h1 span:first-child {
-    color: #333333;
+    transition: 0.4s;
+    color: var(--primeira-dobra-circuito);
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 8vw, 6rem);
@@ -27,13 +28,14 @@ h1 span:first-child {
 }
 
 h1 span:last-child {
+    transition: 0.4s;
     /* text-shadow é o contorno da letra */
       text-shadow: 
     -1px -1px 0 black,
      1px -1px 0 black,
     -1px  1px 0 black,
      1px  1px 0 black;
-    color: #6B8E23;
+    color: var(--primeira-dobra-da-terra) ;
     display: block;
     font-family: 'Pacifico', cursive;
     font-size: clamp(1.5rem, 6vw, 4rem);

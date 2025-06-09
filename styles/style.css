@@ -19,14 +19,21 @@
     /* cores tema claro */
     --icon-theme: url('../img/icons/modo-claro.svg');
     --primeira-dobra-img: url('../img/backgrond/primeira-dobra\ claro.jpg');
-    --bg-color: #fff;
+    --primeira-dobra-circuito: #333;
+    --primeira-dobra-da-terra: #6B8E23;
+    
+    --bg-color: #F0F0F0;
+    
 }
 
 :root:has(#modo-theme:checked){
     /*cores tema escuro*/
     --icon-theme: url('../img/icons/modo-escuro.svg');
     --primeira-dobra-img: url('../img/backgrond/primeira-dobra\ escuro.jpg');
-    --bg-color: #000;
+    --primeira-dobra-circuito: #fff;
+    --primeira-dobra-da-terra: #B8E986;
+    
+    --bg-color: #0B1D3E;
 }
 
 *{
