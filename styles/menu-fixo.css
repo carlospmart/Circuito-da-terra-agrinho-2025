@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    --bg-color-menu: #202020;
+    --color-branco: #fff;
+
+    /*tamanho do menu fixo*/
+    --tma-menu: 50px;
+
+
+    /* cores tema claro */
+    --icon-theme: url('../img/icons/modo-claro.svg');
+    --primeira-dobre-img: url('../img/backgrond/pd-claro.jpg');
+    --bg-color: #fff;
+}
+
+:root:has(#modo-theme:checked){
+    /*cores tema escuro*/
+    --icon-theme: url('../img/icons/modo-escuro.svg');
+    --primeira-dobre-img: url('../img/backgrond/pd-escuro.jpg');
+    --bg-color: #000;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+}
+
+.mobile{
+    display: none;
+}
+
+.desktop{
+    display: block;
+}
+
+header a{
+    color: var(--color-branco);
+    text-decoration: none;
+}
+
+header label{
+    color: var(--color-branco);
+    cursor: pointer;
+}
+
+
+header a:hover , header label:hover{
+    text-decoration:underline;
+}
+
+header .menu{
+    width: 100%;
+    height: var(--tma-menu);
+    color: var(--color-branco);
+    background-color: var(--bg-color-menu);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+}
+
+img{
+    height: 100%;
+}
+
+.imagem{
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.bnt-theme {
+    transition: 0.3s;
+    display: inline-block;       
+    width: 24px;                 
+    height: 24px;
+    background-image: var(--icon-theme);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;      
+    margin-left: 8px;      
+}
+
+#modo-theme{
+    display: none;
+}
+
+.bnt{
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.no-select {
+  user-select: none;
+}
+
+#menu-hamburguer{
+    display: none;
+}
+
+.menu-hamburguer label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu-hamburguer label span{
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.menu-hamburguer input:checked + label span:nth-child(1){
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-hamburguer input:checked + label span:nth-child(2){
+    opacity: 0;
+}
+
+.menu-hamburguer input:checked + label span:nth-child(3){
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+.menu-hamburguer nav{
+      position: absolute;
+  top: var(--tma-menu);
+  left: 0;
+  width: 100vw;
+  background-color: #202020;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.menu-hamburguer input:checked ~ nav {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.menu-hamburguer nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu-hamburguer nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .mobile{
+        display: block;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .bnt-theme {
+        width: 30px;                 
+        height: 30px;
+        margin-right:10px;
+    }
+}
+
