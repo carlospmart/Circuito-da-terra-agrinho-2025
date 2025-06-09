@@ -1,0 +1,59 @@
+
+/* compilação de styles*/
+@import url(menu-fixo.css);
+@import url(primeira-dobra.css);
+
+/* fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+:root{
+    --bg-color-menu: #202020;
+    --color-branco: #fff;
+
+    /*tamanho do menu fixo*/
+    --tma-menu: 50px;
+
+
+    /* cores tema claro */
+    --icon-theme: url('../img/icons/modo-claro.svg');
+    --primeira-dobra-img: url('../img/backgrond/primeira-dobra\ claro.jpg');
+    --bg-color: #fff;
+}
+
+:root:has(#modo-theme:checked){
+    /*cores tema escuro*/
+    --icon-theme: url('../img/icons/modo-escuro.svg');
+    --primeira-dobra-img: url('../img/backgrond/primeira-dobra\ escuro.jpg');
+    --bg-color: #000;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+}
+
+.mobile{
+    display: none;
+}
+
+.desktop{
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile{
+        display: block;
+    }
+
+    .desktop{
+        display: none;
+    }
+}

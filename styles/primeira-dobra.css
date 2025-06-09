@@ -1,0 +1,40 @@
+.primeira-dobra{
+    margin-top: var(--tma-menu);
+    width: 100%;
+    background-image: var(--primeira-dobra-img);
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 144/40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+.primeira-dobra h1{
+    margin: 0;
+    line-height: 1;
+}
+
+h1 span:first-child {
+    color: #333333;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 8vw, 6rem);
+    text-transform: uppercase;
+
+}
+
+h1 span:last-child {
+    /* text-shadow é o contorno da letra */
+      text-shadow: 
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+    color: #6B8E23;
+    display: block;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(1.5rem, 6vw, 4rem);
+}
